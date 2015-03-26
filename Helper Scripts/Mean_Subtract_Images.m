@@ -48,4 +48,8 @@ for i = 1:length(files)
     imwrite(file_Data, [destination_Folder '\' save_File_Prefix '_' files(i).name])
 end
 
+% save mean file
+%
+% still work remining on saving mean file
 
+%imwrite(file_Mean, [destination_Folder '\' 'DATA_MEAN_FILE' source_File_Ext])
