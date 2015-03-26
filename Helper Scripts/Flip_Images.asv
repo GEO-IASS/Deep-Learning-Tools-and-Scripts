@@ -1,0 +1,46 @@
+% Script created for the deep learning 
+% Created by Omer Ishaq. Copy right @ omer.ishaq@gmail.com
+% Input:
+%
+% Output:
+%
+% Action:
+%
+% Todo:
+
+% Specify the folder from which the images are to be flipped
+%
+
+source_Folder = 'C:\Users\Omer\Dropbox\Test data folder';
+destination_Folder = 'C:\Users\Omer\Dropbox\Test data folder\Flipped Data';
+source_File_Ext = '.tif';
+save_File_Prefix = 'Flipped';
+
+% specify te types of flips to perform
+% 
+
+h_Flip = 1;
+v_flip = 1;
+vh_flip = 1;
+
+files = dir([source_Folder '\*' source_File_Ext]);
+
+for i = 1:length(files)
+    
+    file_Name = [source_Folder '\' files(i).name];
+    file_Data = imread(file_Name);
+    
+    if h_flip == true
+        flipped_Data = fliplr(file_Data);
+        imwrite(flipped_Data, [destination_Folder '\' generate_Random_String() '_' files(i).name])
+        
+    elseif v_flip == true
+        flipped_Data = flipud(file_Data);
+        imwrite(flipped_Data, [destination_Folder '\' generate_Random_String() '_' files(i).name])
+        
+    elseif 
+        
+    end
+    
+end
+
