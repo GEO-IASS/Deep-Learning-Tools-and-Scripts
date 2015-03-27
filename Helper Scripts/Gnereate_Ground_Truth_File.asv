@@ -16,7 +16,7 @@ source_Folder = 'C:\Users\Omer\Dropbox\Test data folder';
 source_File_Ext = '.tif';
 
 groundtruth_File_Name = 'GT.txt';
-groundtruth_Prefix = 'Prefix';
+groundtruth_Prefix = '';
 
 groundtruth_Label = '0';
 
@@ -32,17 +32,13 @@ files = dir([source_Folder '\*' source_File_Ext]);
 
 if exist([source_Folder '\' 'GT.txt'], 'file') == 2
     % append
-    fid = fopen([source_Folder '\' 'GT.txt'], 'a+');
-    for i = 1:length(files)
-        fprintf(fid, '%s\n', [groundtruth_Prefix files(i).name ' ' groundtruth_Label]);
+    fid = fopen('test','w');
+    for i = 1:length(imgs_class1)
+        img = reshape(imgs_class1(:,i), 28, 28);
+        imwrite(img, ['MNIST_' num2str(class1) '_' num2str(i) '.png']);
+        fprintf(fid, '%s\n', ['MNIST_' num2str(class1) '_' num2str(i) '.png 0'])
     end
-    fclose(fid);
 else
     % create
-    fid = fopen([source_Folder '\' 'GT.txt'], 'w');
-    for i = 1:length(files)
-        fprintf(fid, '%s\n', [groundtruth_Prefix files(i).name ' ' groundtruth_Label]);
-    end
-    fclose(fid);
 end
 

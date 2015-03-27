@@ -7,8 +7,8 @@ Todo
 ----
 
 For Helper scripts
-+ Script for flipping all images horizontal and vertical. 	[Completed]
-+ Computing mean image.
++ Script for flipping all images horizontal and vertical. 		[Completed]
++ Computing mean image.							[Completed]
 + Performing zero mean unit standard deviation change.
 + Renaming all images.
 + Generate and append date file.
